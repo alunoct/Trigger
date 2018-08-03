@@ -25,14 +25,13 @@
 	    	font-family: 'Do Hyeon', sans-serif;
 		}
 		.content {
-			margin: 0 auto;
-			
+			margin: 0 auto;			
 			width: 60%;
-			height:800px;	
+			
 			 
 		}
 		.rodape {
-		
+			background-color: rgb(122, 120, 118);
 			width: 100%;
 			height: 50px;
 			position: absolute;
@@ -53,7 +52,7 @@
 		ul {
 			list-style-type: none;
     		margin: auto;
-    		padding: 0 0 0 30%;
+    		padding: 0 0 0 27%;
     		color: white;
 		}
 		li {
@@ -68,7 +67,7 @@
 			color: inherit;
 		}
 		a:hover {
-			color: red;
+			color: green;
 		}
 		form{
 			padding: 5% 0% 0 15%;	
@@ -78,7 +77,6 @@
 			background-color: inherit;
 			color: rgb(51, 51, 51);
 			font-size: 20px;	
-			border-style: solid;
 			border-style: solid;
 			border-color: black;
 			border-right: 0px;
@@ -101,8 +99,26 @@
 			padding: 0 2% 0 3%;
 			color: rgb(51, 51, 51);
 		}
-		
+		.SomaN {
+			margin-top: 180px;
+		}
+		.botao {
+			border-right: 2px;
+			border-left: 2px;
+			border-top: 2px;
+			border-style: solid;
+			border-color: black;
+			padding-right: 5px;
+		}
+		.botao:focus {
+			border-color: black;
+		}
+		.TermoGeral {
+			margin-top: 30px;
+		}
+	
 	</style>
+	
 </head>
 <body>
 	<div class="container">
@@ -117,18 +133,46 @@
 			</ul>
 		</div>
 		<div class="content">
-			<h2>Termo Geral da P.A</h2>
-			<form>
-				<input type="text" name="" placeholder="a1">
-				<h3> +  (</h3>
-				<input type="text" name="" placeholder="n">
-				<h3> - 1 ) * </h3>
-				<input type="text" name="" placeholder="r">
-				<h3> - 1 ) = </h3>
-				<input type="text" name="" placeholder="an">
-				<!--<input type="submit" value="Calcular" id="calc">
-				-->
-			</form>
+			
+				
+			<div class="TermoGeral">
+				<h2>Termo Geral da P.A</h2>
+				<script> 
+				function pa() 
+				{
+				 	form.campo4.value = (form.campo1.value*1) + ((form.campo2.value*1) - 1 ) * (form.campo3.value*1)
+				}
+				function somatermogeral() 
+				{
+					formsoma.campo4.value = (((formsoma.campo1.value*1) + (formsoma.campo2.value*1) ) * (formsoma.campo3.value*1) ) / 2
+				}
+				</script>
+				<form name="form" class="Termo">
+					<input type="text" name="campo1" placeholder="a1">
+					<h3> +  (</h3>
+					<input type="text" name="campo2" placeholder="n">
+					<h3> - 1 ) * </h3>
+					<input type="text" name="campo3" placeholder="r">
+					<h3> - 1 ) = </h3>
+					<input type="text" name="campo4" placeholder="an">
+					
+					<input class="botao" type="button" name="" onclick="pa()" value="O.K">
+				</form>
+			</div>
+			<div class="SomaN">
+				<h2> Soma de todos os termos </h2>
+				<form name="formsoma">
+					<h3> ((</h3>
+					<input type="text" name="campo1" placeholder="an">
+					<h3> + </h3>
+					<input type="text" name="campo2" placeholder="a1">
+					<h3> ) *</h3>
+					<input type="text" name="campo3" placeholder="n">
+					<h3> ) / 2  = </h3>
+					<input type="text" name="campo4" placeholder="Sn">
+					<input class="botao" type="button" name="" onclick="somatermogeral()" value="O.K">
+				</form>
+			</div>
 		</div>
 		<div class="rodape">
 			
